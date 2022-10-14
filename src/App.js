@@ -5,12 +5,12 @@ function City(city) {
   return(
     <div className="city-card">
       <div className="card-header">
-        <p>{city.city.City}</p>
+        <p className="city-name">{city.city.City}, {city.city.State}</p>
       </div>
       <div className="card-body">
         <ul>
           <li>State: {city.city.State} </li>
-          <li>Location: ({city.city.Lat}, ({city.city.Long}))</li>
+          <li>Location: ({city.city.Lat}, {city.city.Long})</li>
           <li>Population (estimated): {city.city.EstimatedPopulation}</li>
           <li>Total Wages: {city.city.TotalWages}</li>
         </ul>
@@ -22,14 +22,15 @@ function City(city) {
 function ZipSearchField({zip, setZip}) {
   return(
     <div className="zip-search-field">
-        <label className="zip-code">
-            Zip Code:
-            <input
-              type="text"
-              value={zip}
-              onChange={(e) => setZip(e.target.value)}
-            />
-          </label>
+      <label className="zip-code">
+          Zip Code:
+          <input
+            className="zip-input"
+            type="text"
+            value={zip}
+            onChange={(e) => setZip(e.target.value)}
+          />
+        </label>
     </div>
   );
 }
